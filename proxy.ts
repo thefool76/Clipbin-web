@@ -12,7 +12,7 @@ function withSecurityHeaders(response: NextResponse) {
   return response;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (PUBLIC_FILE_PATTERN.test(pathname) || pathname.startsWith("/_next")) {
