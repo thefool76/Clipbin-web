@@ -21,8 +21,8 @@ cp .env.example .env.local
 
 Set values from your Supabase project:
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
 
 3. Run locally
 
@@ -47,7 +47,7 @@ Only public web resolves should increment clicks (owner preview in iOS is exclud
 
 1. Import this `web` folder as a project in Vercel.
 2. Add env vars in Vercel project settings:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
 3. Deploy.
 4. Point your domain (`clipbin.com`) to that Vercel project.
