@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { LightTrailCanvas } from "@/components/light-trail-canvas";
 import appLogo from "@/Assests/app logo.png";
 import iphoneFrame from "@/Assests/iphone frame.png";
@@ -236,6 +237,8 @@ export default function HomePage() {
           <nav aria-label="Footer">
             <a href="#features-title">Features</a>
             <a href="#use-cases-title">Use Cases</a>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
           </nav>
         </div>
       </footer>

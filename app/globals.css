@@ -409,13 +409,25 @@ a {
 .pricing-section {
   width: min(1200px, 94vw);
   margin: 0 auto 128px;
+}
+
+.pricing-section-title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.03;
+}
+
+.pricing-layout {
   display: grid;
   grid-template-columns: minmax(300px, 1.05fr) minmax(560px, 1fr);
   gap: 44px;
   align-items: center;
 }
 
-.pricing-copy h2 {
+.pricing-copy h3 {
   margin: 0;
   max-width: 14ch;
   font-family: var(--font-sans), "Inter", "Avenir Next", sans-serif;
@@ -698,10 +710,10 @@ a {
 }
 
 .clipbin-footer-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
 .footer-brand {
@@ -798,31 +810,161 @@ a {
   margin-top: 24px;
   padding-top: 14px;
   border-top: 1px dashed #cbcbcb;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(190px, 1fr) auto;
+  align-items: start;
+  gap: 12px 18px;
 }
 
 .clipbin-footer-bottom p {
   margin: 0;
   color: #4b4b4b;
+  line-height: 1.36;
 }
 
 .clipbin-footer-bottom p:first-child {
-  margin-right: auto;
+  margin-right: 0;
 }
 
 .clipbin-footer-bottom nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  gap: 18px;
+  justify-self: end;
 }
 
 .clipbin-footer-bottom a {
   font-size: 0.8rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+}
+
+/* Legal pages (Privacy, Terms) */
+.legal-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-header {
+  padding: 20px min(5vw, 40px);
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.legal-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-size: 1.25rem;
+  color: #161616;
+  transition: opacity 0.2s ease;
+}
+
+.legal-brand:hover {
+  opacity: 0.85;
+}
+
+.legal-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.legal-main {
+  flex: 1;
+  width: min(720px, 92vw);
+  margin: 0 auto;
+  padding: 40px min(4vw, 24px) 60px;
+}
+
+.legal-title {
+  margin: 0 0 8px;
+  font-family: var(--font-serif), "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #161616;
+}
+
+.legal-updated {
+  margin: 0 0 32px;
+  font-size: 0.9rem;
+  color: #5a5a5a;
+}
+
+.legal-prose {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #2a2a2a;
+}
+
+.legal-prose p {
+  margin: 0 0 1em;
+}
+
+.legal-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose h2 {
+  margin: 1.5em 0 0.5em;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal-prose a {
+  color: #0d6efd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-prose a:hover {
+  color: #0a58ca;
+}
+
+.legal-footer {
+  margin-top: auto;
+  padding: 20px min(5vw, 40px) 28px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.legal-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legal-footer nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4b4b4b;
+}
+
+.legal-footer nav a:hover {
+  color: #161616;
+}
+
+.legal-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b6b6b;
 }
 
 .interlude-home {
@@ -1593,13 +1735,20 @@ a {
 
   .pricing-section {
     margin-bottom: 94px;
+  }
+
+  .pricing-section-title {
+    margin-bottom: 20px;
+    font-size: clamp(2.25rem, 9vw, 3.2rem);
+  }
+
+  .pricing-layout {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  .pricing-copy h2 {
-    max-width: 12ch;
-    font-size: clamp(2.2rem, 9vw, 3.8rem);
+  .pricing-copy h3 {
+    font-size: clamp(2.25rem, 9vw, 3.2rem);
   }
 
   .pricing-copy p {
@@ -1675,14 +1824,8 @@ a {
     padding-top: 20px;
   }
 
-  .clipbin-footer-top,
-  .clipbin-footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .clipbin-footer-top {
-    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 14px;
   }
 
@@ -1703,22 +1846,18 @@ a {
   .clipbin-footer-bottom {
     margin-top: 18px;
     padding-top: 12px;
-    width: 100%;
-    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
   }
 
   .clipbin-footer-bottom p:first-child {
-    margin-right: 0;
-  }
-
-  .clipbin-footer-bottom p {
-    line-height: 1.4;
+    grid-column: 1 / -1;
   }
 
   .clipbin-footer-bottom nav {
-    margin-top: 2px;
+    justify-self: start;
+    margin-top: 0;
     gap: 12px;
-    flex-wrap: wrap;
   }
 
   .hero-shell,
@@ -1906,6 +2045,23 @@ a {
     transform: none;
   }
 
+  .clipbin-footer-top {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .clipbin-footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .clipbin-footer-bottom nav {
+    justify-self: start;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px 16px;
+  }
+
   .hero-stage {
     min-height: clamp(360px, 78vh, 620px);
   }
@@ -2075,7 +2231,8 @@ a {
   }
 
   .clipbin-footer-bottom nav {
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .clipbin-footer-bottom a {
@@ -2087,8 +2244,14 @@ a {
     margin-bottom: 82px;
   }
 
-  .pricing-copy h2 {
-    font-size: clamp(2rem, 9.8vw, 3rem);
+  .pricing-section-title {
+    margin-bottom: 18px;
+    font-size: clamp(2.15rem, 9vw, 3rem);
+  }
+
+  .pricing-copy h3 {
+    margin-bottom: 20px;
+    font-size: clamp(2.25rem, 9vw, 3.2rem);
   }
 
   .pricing-copy p {
