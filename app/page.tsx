@@ -5,6 +5,7 @@ import iphoneFrame from "@/Assests/iphone frame.png";
 import leftHand from "@/Assests/left hand.png";
 import peoplesIcon from "@/Assests/peoples.png";
 import rightHand from "@/Assests/right hand.png";
+import { PricingSection } from "@/components/pricing-section";
 
 const features = [
   {
@@ -163,6 +164,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <PricingSection />
 
       <section className="use-cases-section" aria-labelledby="use-cases-title">
         <h2 id="use-cases-title">Use Cases</h2>

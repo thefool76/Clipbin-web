@@ -406,6 +406,210 @@ a {
   padding-top: 12px;
 }
 
+.pricing-section {
+  width: min(1200px, 94vw);
+  margin: 0 auto 128px;
+  display: grid;
+  grid-template-columns: minmax(300px, 1.05fr) minmax(560px, 1fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.pricing-copy h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  font-size: clamp(2.3rem, 4.2vw, 4.1rem);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #161616;
+}
+
+.pricing-copy p {
+  margin: 22px 0 0;
+  max-width: 28ch;
+  color: #2f2f2f;
+  font-family: var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  font-size: clamp(1.02rem, 1.35vw, 1.95rem);
+  line-height: 1.38;
+}
+
+.pricing-side {
+  display: grid;
+  justify-items: end;
+}
+
+.pricing-toggle {
+  position: relative;
+  width: fit-content;
+  margin: 0 0 14px;
+  border: 1px solid #d1d1d1;
+  border-radius: 11px;
+  background: #d8d8d8;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-toggle-active {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: 96px;
+  border-radius: 8px;
+  background: #f1f1f1;
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    width 260ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pricing-toggle-btn {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: #252525;
+  min-width: 98px;
+  height: 38px;
+  border-radius: 8px;
+  padding: 0 14px;
+  text-align: center;
+  font: 700 0.98rem/1 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  cursor: pointer;
+}
+
+.pricing-toggle-btn.is-active {
+  color: #1b1b1b;
+}
+
+.pricing-save-pill {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 27px;
+  border-radius: 999px;
+  padding: 0 9px;
+  text-align: center;
+  background: #a4c9c7;
+  color: #2b3333;
+  font: 700 0.82rem/1 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.pricing-save-pill.is-active {
+  background: #99c6c3;
+  color: #213739;
+}
+
+.pricing-cards-shell {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pricing-card {
+  min-height: 412px;
+  background: #efefef;
+  border-radius: 18px;
+  padding: 24px 24px 20px;
+  color: #1e1e1e;
+  overflow: hidden;
+}
+
+.pricing-card h3 {
+  margin: 0;
+  font: 700 clamp(2.35rem, 3vw, 3.45rem) / 0.95 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.pricing-price {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.pricing-amount {
+  font: 700 clamp(2.25rem, 3vw, 3.75rem) / 0.95 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.pricing-period {
+  font: 600 clamp(0.95rem, 1vw, 1.28rem) / 1 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pricing-sub {
+  margin: 10px 0 0;
+  min-height: 1.45em;
+  font: 500 clamp(0.96rem, 0.98vw, 1.18rem) / 1.28 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+  color: #2f2f2f;
+}
+
+.pricing-swap {
+  animation: pricing-swap-in 220ms ease;
+}
+
+.pricing-sub s {
+  color: #5a5a5a;
+  text-decoration-thickness: 1.6px;
+}
+
+@keyframes pricing-swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.pricing-card li {
+  position: relative;
+  padding-left: 31px;
+  color: #1f1f1f;
+  font: 500 clamp(1.02rem, 1.05vw, 1.5rem) / 1.24 var(--font-sans), "Inter", "Avenir Next", sans-serif;
+}
+
+.pricing-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
 .use-cases-section {
   width: min(1080px, 92vw);
   margin: 0 auto 140px;
@@ -1387,6 +1591,47 @@ a {
     line-height: 1.08;
   }
 
+  .pricing-section {
+    margin-bottom: 94px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(2.2rem, 9vw, 3.8rem);
+  }
+
+  .pricing-copy p {
+    margin-top: 14px;
+    max-width: 34ch;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+  .pricing-side {
+    justify-items: start;
+  }
+
+  .pricing-toggle {
+    margin-bottom: 12px;
+  }
+
+  .pricing-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pricing-card {
+    min-height: 0;
+    border-radius: 16px;
+    padding: 20px 18px 18px;
+  }
+
+  .pricing-card ul {
+    gap: 10px;
+  }
+
   .use-cases-section {
     margin-bottom: 95px;
   }
@@ -1436,12 +1681,42 @@ a {
     align-items: flex-start;
   }
 
+  .clipbin-footer-top {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .clipbin-footer-top > div {
+    width: 100%;
+  }
+
+  .footer-copy {
+    margin-top: 8px;
+    max-width: 100%;
+  }
+
+  .footer-download-pill {
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+
   .clipbin-footer-bottom {
     margin-top: 18px;
     padding-top: 12px;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .clipbin-footer-bottom p:first-child {
+    margin-right: 0;
+  }
+
+  .clipbin-footer-bottom p {
+    line-height: 1.4;
   }
 
   .clipbin-footer-bottom nav {
+    margin-top: 2px;
     gap: 12px;
     flex-wrap: wrap;
   }
@@ -1566,19 +1841,24 @@ a {
     gap: 10px;
   }
 
+  .brand-mark {
+    gap: 8px;
+  }
+
   .home-logo {
-    width: 36px;
+    width: 40px;
   }
 
   .brand-mark span {
-    font-size: 1rem;
+    font-size: 1.14rem;
   }
 
   .download-pill {
-    min-width: 136px;
-    height: 44px;
+    min-width: 134px;
+    height: 46px;
     padding: 0 12px;
-    font-size: 0.72rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.01em;
   }
 
   .download-label-full {
@@ -1587,17 +1867,19 @@ a {
 
   .download-label-compact {
     display: inline;
-    margin-left: 20px;
+    margin-left: 18px;
+    padding-right: 16px;
   }
 
   .download-icon-left {
     left: 10px;
-    font-size: 1.04rem;
+    font-size: 1.05rem;
   }
 
   .download-icon-right {
     right: 10px;
-    font-size: 1.2rem;
+    font-size: 1.16rem;
+    display: block;
   }
   
   .footer-download-pill {
@@ -1629,20 +1911,21 @@ a {
   }
 
   .hand {
-    width: 43vw;
-    opacity: 0.8;
+    width: 45vw;
+    opacity: 0.84;
+    transform: translateY(-36%);
   }
 
   .hand-left {
-    left: -20vw;
+    left: -22vw;
   }
 
   .hand-right {
-    right: -20vw;
+    right: -22vw;
   }
 
   .phone-shell {
-    width: min(72vw, 300px);
+    width: min(70vw, 292px);
     min-width: 180px;
   }
 
@@ -1656,6 +1939,7 @@ a {
   }
 
   .features-section,
+  .pricing-section,
   .use-cases-section,
   .clipbin-footer {
     width: min(1080px, 94vw);
@@ -1668,22 +1952,55 @@ a {
   .feature-ascii {
     font-size: 0.8rem;
   }
+
+  .pricing-toggle {
+    padding: 3px;
+    gap: 5px;
+  }
+
+  .pricing-toggle-active {
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+  }
+
+  .pricing-toggle-btn {
+    min-width: 82px;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .pricing-save-pill {
+    min-width: 70px;
+    height: 24px;
+    padding: 0 7px;
+    font-size: 0.76rem;
+  }
+
+  .pricing-amount {
+    font-size: clamp(2.1rem, 5.5vw, 3rem);
+  }
 }
 
 @media (max-width: 420px) {
   .brand-mark {
-    gap: 6px;
+    gap: 7px;
   }
 
   .home-logo {
-    width: 32px;
+    width: 36px;
+  }
+
+  .brand-mark span {
+    font-size: 1.05rem;
   }
 
   .download-pill {
     min-width: 126px;
-    height: 40px;
+    height: 42px;
     padding: 0 10px;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
   }
 
   .route-capsule-download {
@@ -1712,17 +2029,19 @@ a {
   }
 
   .download-label-compact {
-    margin-left: 17px;
+    margin-left: 16px;
+    padding-right: 14px;
   }
 
   .download-icon-left {
     left: 8px;
-    font-size: 0.92rem;
+    font-size: 0.94rem;
   }
 
   .download-icon-right {
     right: 8px;
-    font-size: 1.08rem;
+    font-size: 1.02rem;
+    display: block;
   }
   
   .footer-download-pill {
@@ -1747,21 +2066,95 @@ a {
     padding-right: 0;
   }
 
+  .clipbin-footer {
+    margin-bottom: 14px;
+  }
+
+  .clipbin-footer-bottom {
+    gap: 6px;
+  }
+
+  .clipbin-footer-bottom nav {
+    gap: 10px;
+  }
+
+  .clipbin-footer-bottom a {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-section {
+    margin-bottom: 82px;
+  }
+
+  .pricing-copy h2 {
+    font-size: clamp(2rem, 9.8vw, 3rem);
+  }
+
+  .pricing-copy p {
+    font-size: clamp(0.97rem, 4.2vw, 1.12rem);
+    line-height: 1.42;
+  }
+
+  .pricing-toggle {
+    padding: 3px;
+    gap: 4px;
+  }
+
+  .pricing-toggle-active {
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+  }
+
+  .pricing-toggle-btn {
+    min-width: 72px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 0.84rem;
+  }
+
+  .pricing-save-pill {
+    min-width: 64px;
+    height: 22px;
+    padding: 0 6px;
+    font-size: 0.7rem;
+  }
+
+  .pricing-card {
+    padding: 18px 14px 16px;
+    border-radius: 14px;
+  }
+
+  .pricing-card ul {
+    margin-top: 15px;
+    gap: 8px;
+  }
+
+  .pricing-card li {
+    padding-left: 26px;
+  }
+
+  .pricing-amount {
+    font-size: clamp(1.95rem, 8vw, 2.5rem);
+  }
+
   .hand {
-    width: 39vw;
-    opacity: 0.76;
+    width: 42vw;
+    opacity: 0.82;
+    transform: translateY(-38%);
   }
 
   .hand-left {
-    left: -18vw;
+    left: -20vw;
   }
 
   .hand-right {
-    right: -18vw;
+    right: -20vw;
   }
 
   .phone-shell {
-    width: min(76vw, 280px);
+    width: min(72vw, 276px);
     min-width: 170px;
   }
 
