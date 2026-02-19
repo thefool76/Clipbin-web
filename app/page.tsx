@@ -51,7 +51,7 @@ export default function HomePage() {
           <a className="topbar-anchor-link" href="#testing-waitlist-title">
             Join Beta
           </a>
-          <a className="download-pill" href="#" aria-label="Download app now">
+          {/* <a className="download-pill" href="#" aria-label="Download app now">
             <span className="download-icon-left" aria-hidden="true">
               <AppleLogo size={20} />
             </span>
@@ -60,7 +60,7 @@ export default function HomePage() {
             <span className="download-icon-right" aria-hidden="true">
               <ChevronRight size={20} strokeWidth={2} />
             </span>
-          </a>
+          </a> */}
         </div>
       </header>
 
@@ -190,7 +190,7 @@ export default function HomePage() {
             <p className="footer-brand">Clipbin</p>
             <p className="footer-copy">Fast, private, temporary text sharing.</p>
           </div>
-          <a className="footer-download-pill" href="#" aria-label="Download for iOS">
+          {/* <a className="footer-download-pill" href="#" aria-label="Download for iOS">
             <span className="footer-download-icon-left" aria-hidden="true">
               <AppleLogo size={18} />
             </span>
@@ -198,7 +198,7 @@ export default function HomePage() {
             <span className="footer-download-icon-right" aria-hidden="true">
               <ChevronRight size={18} strokeWidth={2} />
             </span>
-          </a>
+          </a> */}
         </div>
         <div className="clipbin-footer-bottom">
           <p>Share faster. Stay private. Keep it temporary. © {new Date().getFullYear()} Clipbin.</p>
