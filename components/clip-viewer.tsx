@@ -1,5 +1,6 @@
 "use client";
 
+import { AppleLogo } from "@/components/apple-logo";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import type { ResolveResponse } from "@/lib/types";
 
@@ -93,7 +94,7 @@ export function ClipViewer({ shortCode }: { shortCode: string }) {
               rel="noreferrer"
               aria-label="Download app now"
             >
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true"><AppleLogo size={16} /></span>
               <span>Download</span>
             </a>
             <button

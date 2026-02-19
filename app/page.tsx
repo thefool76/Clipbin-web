@@ -1,86 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { AppleLogo } from "@/components/apple-logo";
 import { LightTrailCanvas } from "@/components/light-trail-canvas";
 import appLogo from "@/Assests/app logo.png";
 import iphoneFrame from "@/Assests/iphone frame.png";
 import leftHand from "@/Assests/left hand.png";
 import peoplesIcon from "@/Assests/peoples.png";
 import rightHand from "@/Assests/right hand.png";
-import { PricingSection } from "@/components/pricing-section";
+import { FeatureBentoIcon } from "@/components/feature-bento-icons";
+import { TestingWaitlistForm } from "@/components/testing-waitlist-form";
 
 const features = [
   {
-    title: "Simple And Fast",
-    body: "From rough note to shared link in seconds. No setup, no extra steps.",
-    points: ["Paste text", "Pick expiry", "Share short URL"],
-    ascii: [
-      "┌──────────────────────────┐",
-      "│ $ clipbin new            │",
-      "│ • content: pasted        │",
-      "│ • expiry : 24h           │",
-      "│ • short  : cbn.sh/x7Q    │",
-      "└──────────────────────────┘"
-    ].join("\n")
+    title: "SIMPLE AND FAST",
+    body: "From idea to shareable link in under 5 seconds. Clipbin removes friction so youtes across teams. Less tool switching, faster collaboration.",
+    points: ["Paste text", "Pick expiry", "Share short URL"]
   },
   {
     title: "Private By Default",
     body: "Add a lock for sensitive content. Only people with the password can open it.",
-    points: ["Optional password gate", "Secure access flow"],
-    ascii: [
-      "          .--------.       ",
-      "       .-'  .--.   '-.     ",
-      "      /    /    \\    \\     ",
-      "     |    | ()  |    |     ",
-      "     |    |_____|    |     ",
-      "     |   .------.    |     ",
-      "      \\  '------'   /      ",
-      "       '-._______.-'       "
-    ].join("\n")
+    points: ["Optional password gate", "Secure access flow"]
   },
   {
     title: "Speaks Your Workflow",
     body: "Share snippets across product, support, and engineering without changing tools.",
-    points: ["Logs", "Config blocks", "One-time notes"],
-    ascii: [
-      "┌────────┬────────┬────────┐",
-      "│   JS   │ PYTHON │  DOCS  │",
-      "├────────┼────────┼────────┤",
-      "│  API   │  OPS   │  CHAT  │",
-      "├────────┼────────┼────────┤",
-      "│  QA    │  SRE   │  NOTES │",
-      "└────────┴────────┴────────┘"
-    ].join("\n")
+    points: ["Logs", "Config blocks", "One-time notes"]
   },
   {
-    title: "View Tracking",
-    body: "Know if a clip was opened without extra analytics tooling.",
-    points: ["Open count", "Fast delivery signal"],
-    ascii: [
-      "        .-============-.    ",
-      "     .-'      __        '-. ",
-      "   .'      .-'  '-.       '.",
-      "  /      .'  ()   '.        \\",
-      " |      |    __     |        |",
-      "  \\      '.______.''        /",
-      "   '.                     .' ",
-      "     '-.______________.-'   "
-    ].join("\n")
+    title: "VIEW TRACKING",
+    body: "Stop guessing if someone saw your message. Know instantly when your clip is opened. Great for support, handoffs, and async updates.",
+    points: ["Open count", "Quick delivery confirmation"]
   },
   {
-    title: "Auto Expiry",
-    body: "Clips disappear when they should. Keep shared data temporary by design.",
-    points: ["Minutes to days", "No stale links"],
-    ascii: [
-      "        .---------------.    ",
-      "      .' 12         1   '.   ",
-      "     / 11             2   \\  ",
-      "    | 10       •       3   | ",
-      "    |          |\\          | ",
-      "    |  9       | \\      4  | ",
-      "     \\  8             5   /  ",
-      "      '. 7         6   .'    ",
-      "        '---------------'    "
-    ].join("\n")
+    title: "AUTO EXPIRY",
+    body: "Keep your shared data clean and temporary. Clips automatically disappear when they're no longer needed. Perfect for one-time or time-sensitive info.",
+    points: ["Flexible expiry from minutes to days", "No outdated or lingering links"]
   }
 ] as const;
 
@@ -92,16 +47,21 @@ export default function HomePage() {
           <Image src={appLogo} alt="Clipbin logo" className="home-logo" priority />
           <span>Clipbin</span>
         </div>
-        <a className="download-pill" href="#" aria-label="Download app now">
-          <span className="download-icon-left" aria-hidden="true">
-            
-          </span>
-          <span className="download-label-full">Download for iOS</span>
-          <span className="download-label-compact">Download</span>
-          <span className="download-icon-right" aria-hidden="true">
-            →
-          </span>
-        </a>
+        <div className="topbar-actions">
+          <a className="topbar-anchor-link" href="#testing-waitlist-title">
+            Join Beta
+          </a>
+          <a className="download-pill" href="#" aria-label="Download app now">
+            <span className="download-icon-left" aria-hidden="true">
+              <AppleLogo size={20} />
+            </span>
+            <span className="download-label-full">Download for iOS</span>
+            <span className="download-label-compact">Download</span>
+            <span className="download-icon-right" aria-hidden="true">
+              <ChevronRight size={20} strokeWidth={2} />
+            </span>
+          </a>
+        </div>
       </header>
 
       <section className="hero-stage" aria-label="Interlude hero">
@@ -115,6 +75,7 @@ export default function HomePage() {
             <div className="screen-copy">
               <p>You are here.</p>
               <p>So are others.</p>
+              <p>Join the beta phase.</p>
             </div>
           </div>
           <Image src={iphoneFrame} alt="" className="phone-frame" aria-hidden="true" />
@@ -123,21 +84,21 @@ export default function HomePage() {
 
       <section className="home-manifesto" aria-labelledby="manifesto-title">
         <h1 id="manifesto-title">
-          Share text instantly,
+          Share text in seconds
           <br />
-          stay in control,
+          Stay private by default
           <br />
-          and let it expire on your terms.
+          Make every link temporary
         </h1>
 
         <p>
-          Clipbin gives you a fast place to share snippets, notes, and temporary text with a short link. Post in
-          seconds, send anywhere, and keep collaboration moving.
+          Clipbin is the fastest way to send snippets, notes, and sensitive text with a short link that expires when
+          you choose. No cluttered tools, no extra steps - just paste, share, and move on.
         </p>
 
         <p>
-          Add a password when needed, track opens, and set automatic expiry so shared text does not live forever. No
-          feed, no profiles, no distractions.
+          Add a password, track opens, and keep control of your data from start to finish. Built for people who want
+          speed without sacrificing privacy.
         </p>
       </section>
 
@@ -148,6 +109,7 @@ export default function HomePage() {
           {features.map((feature, index) => (
             <article key={feature.title} className={`feature-card feature-slot-${index + 1}`}>
               <header className="feature-head">
+                <FeatureBentoIcon index={index} />
                 <h3>{feature.title}</h3>
               </header>
               <div className="feature-body">
@@ -158,15 +120,26 @@ export default function HomePage() {
                   ))}
                 </ul>
               </div>
-              <pre className="feature-ascii" aria-hidden="true">
-                {feature.ascii}
-              </pre>
+              {index !== 0 && (
+                <div className="feature-icon-area" aria-hidden="true">
+                  <FeatureBentoIcon index={index} size="large" />
+                </div>
+              )}
             </article>
           ))}
         </div>
       </section>
 
-      <PricingSection />
+      <section className="testing-waitlist-section" aria-labelledby="testing-waitlist-title">
+        <div className="testing-waitlist-shell">
+          <p className="testing-waitlist-kicker">Early Access</p>
+          <h2 id="testing-waitlist-title">Join the testing list</h2>
+          <p className="testing-waitlist-copy">
+            Drop your email to get invited to test upcoming Clipbin builds before public release.
+          </p>
+          <TestingWaitlistForm />
+        </div>
+      </section>
 
       <section className="use-cases-section" aria-labelledby="use-cases-title">
         <h2 id="use-cases-title">Use Cases</h2>
@@ -174,42 +147,38 @@ export default function HomePage() {
 
         <div className="use-cases-grid">
           <article className="use-case-column">
-            <p className="use-case-pill">Personal Use</p>
+            <p className="use-case-pill">PERSONAL</p>
             <ul className="use-case-list">
               <li>
-                <strong>Quick notes</strong> Save temporary thoughts, reminders, and drafts you do not want sitting in
-                your main notes app.
+                Move text between devices instantly
               </li>
               <li>
-                <strong>Private snippets</strong> Keep personal info in a short clip and protect it with a password
-                before sharing.
+                Share private info safely
               </li>
               <li>
-                <strong>One-time sharing</strong> Send text once, let it expire, and avoid old links hanging around.
+                Send one-time messages without leaving a trace
               </li>
             </ul>
             <blockquote className="use-case-quote">
-              “Exactly what I needed for quick copy-paste between phone and laptop without opening ten apps.”
+              “Finally a simple way to move text between my phone and laptop without friction.”
             </blockquote>
           </article>
 
           <article className="use-case-column">
-            <p className="use-case-pill">Teams & Work</p>
+            <p className="use-case-pill">TEAMS</p>
             <ul className="use-case-list">
               <li>
-                <strong>Code handoff</strong> Share logs, config blocks, and repro steps in seconds during debugging.
+                Share logs and debugging notes instantly
               </li>
               <li>
-                <strong>Support workflows</strong> Send temporary troubleshooting steps that can expire after a case is
-                closed.
+                Send temporary instructions that expire
               </li>
               <li>
-                <strong>Async collaboration</strong> Post plain-text updates with short links and track view count as a
-                read signal.
+                Track whether updates were seen
               </li>
             </ul>
             <blockquote className="use-case-quote">
-              “Clipbin keeps our incident notes fast and clean. Post, share, resolve, and let the data disappear.”
+              “Clipbin keeps our workflows fast and distraction-free. Share, solve, and move on.”
             </blockquote>
           </article>
         </div>
@@ -219,20 +188,20 @@ export default function HomePage() {
         <div className="clipbin-footer-top">
           <div>
             <p className="footer-brand">Clipbin</p>
-            <p className="footer-copy">Fast, temporary, and private text sharing for everyday workflows.</p>
+            <p className="footer-copy">Fast, private, temporary text sharing.</p>
           </div>
           <a className="footer-download-pill" href="#" aria-label="Download for iOS">
             <span className="footer-download-icon-left" aria-hidden="true">
-              
+              <AppleLogo size={18} />
             </span>
             <span className="footer-download-label">Download iOS</span>
             <span className="footer-download-icon-right" aria-hidden="true">
-              →
+              <ChevronRight size={18} strokeWidth={2} />
             </span>
           </a>
         </div>
         <div className="clipbin-footer-bottom">
-          <p>Built for quick notes, secure snippets, and links that expire when you want. © {new Date().getFullYear()} Clipbin.</p>
+          <p>Share faster. Stay private. Keep it temporary. © {new Date().getFullYear()} Clipbin.</p>
           <p>Made with ❤ by thefool.</p>
           <nav aria-label="Footer">
             <a href="#features-title">Features</a>

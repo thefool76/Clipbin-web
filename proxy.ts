@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 const SHORT_CODE_PATTERN = /^[A-Za-z0-9_-]{4,64}$/;
 const PUBLIC_FILE_PATTERN = /\.[^/]+$/;
+const API_POST_ROUTES = new Set(["/api/resolve", "/api/testing-emails"]);
 
 function withSecurityHeaders(response: NextResponse) {
   response.headers.set("X-Frame-Options", "DENY");
@@ -23,15 +24,16 @@ export function proxy(request: NextRequest) {
     return withSecurityHeaders(NextResponse.next());
   }
 
-  if (pathname === "/api/resolve") {
+  if (pathname.startsWith("/api/")) {
+    if (!API_POST_ROUTES.has(pathname)) {
+      return withSecurityHeaders(NextResponse.json({ error: "Not Found" }, { status: 404 }));
+    }
+
     if (request.method !== "POST") {
       return withSecurityHeaders(NextResponse.json({ error: "Method Not Allowed" }, { status: 405 }));
     }
-    return withSecurityHeaders(NextResponse.next());
-  }
 
-  if (pathname.startsWith("/api/")) {
-    return withSecurityHeaders(NextResponse.json({ error: "Not Found" }, { status: 404 }));
+    return withSecurityHeaders(NextResponse.next());
   }
 
   const pathSegments = pathname.split("/").filter(Boolean);

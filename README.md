@@ -40,6 +40,9 @@ Open `http://localhost:3000/Ab12Cd34`.
   - `p_short_code`
   - `p_password`
   - `p_source = "web_public"`
+- Waitlist endpoint: `app/api/testing-emails/route.ts`
+  - Stores email signups in `public.testing_emails`
+  - Table SQL: `supabase/sql/2026-02-19-create-testing-emails.sql`
 
 Only public web resolves should increment clicks (owner preview in iOS is excluded by DB logic).
 
