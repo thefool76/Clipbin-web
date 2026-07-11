@@ -2,7 +2,7 @@
 
 Pastebin-style public resolver for links like:
 
-- `https://clipbin.com/Ab12Cd34`
+- `https://clipbin.xyz/Ab12Cd34`
 
 ## Setup
 
@@ -53,4 +53,4 @@ Only public web resolves should increment clicks (owner preview in iOS is exclud
    - `SUPABASE_URL`
    - `SUPABASE_ANON_KEY`
 3. Deploy.
-4. Point your domain (`clipbin.com`) to that Vercel project.
+4. Point `clipbin.xyz` to that Vercel project.

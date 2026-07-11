@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ClipViewer } from "@/components/clip-viewer";
 import appLogo from "@/Assests/app logo.png";
 
-const SHORT_CODE_PATTERN = /^[A-Za-z0-9_-]{4,64}$/;
+const SHORT_CODE_PATTERN = /^[A-Za-z0-9_-]{4,16}$/;
 
 export async function generateMetadata({
   params

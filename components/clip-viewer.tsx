@@ -89,13 +89,11 @@ export function ClipViewer({ shortCode }: { shortCode: string }) {
           <div className="clip-route-head-controls">
             <a
               className="route-capsule-download"
-              href="https://apps.apple.com/us/app/example-app/id000000000"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Download app now"
+              href="/"
+              aria-label="Go to Clipbin home"
             >
               <span aria-hidden="true"><AppleLogo size={16} /></span>
-              <span>Download</span>
+              <span>Clipbin home</span>
             </a>
             <button
               type="button"

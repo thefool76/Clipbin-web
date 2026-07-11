@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://clipbin.app";
+const DEFAULT_SITE_URL = "https://clipbin.xyz";
 
 export function getSiteUrl() {
   const value = process.env.APP_URL?.trim() || DEFAULT_SITE_URL;

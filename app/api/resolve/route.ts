@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import type { ResolveResponse } from "@/lib/types";
 
-const SHORT_CODE_PATTERN = /^[A-Za-z0-9_-]{4,64}$/;
+const SHORT_CODE_PATTERN = /^[A-Za-z0-9_-]{4,16}$/;
 const MAX_PASSWORD_LENGTH = 256;
 
 export async function POST(req: Request) {
