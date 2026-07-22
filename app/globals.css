@@ -105,7 +105,7 @@ a {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 11px;
 }
 
 .brand-mark span {
@@ -116,13 +116,18 @@ a {
 }
 
 .home-logo {
-  width: 44px;
-  height: auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  box-shadow: 0 8px 18px rgba(0, 78, 255, 0.18);
 }
 
 @media (min-width: 1024px) {
   .home-scene .home-logo {
-    width: 50px;
+    width: 42px;
+    height: 42px;
   }
 
   .home-scene .brand-mark span {
@@ -1207,7 +1212,7 @@ a {
 .legal-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   font-family: var(--font-serif), "Times New Roman", serif;
   font-size: 1.25rem;
   color: #161616;
@@ -1221,7 +1226,10 @@ a {
 .legal-logo {
   width: 32px;
   height: 32px;
-  object-fit: contain;
+  border-radius: 8px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  box-shadow: 0 6px 14px rgba(0, 78, 255, 0.14);
 }
 
 .legal-main {
@@ -1641,11 +1649,13 @@ a {
 }
 
 .clip-route-brand-center {
-  gap: 10px;
+  gap: 13px;
 }
 
 .clip-route-brand-center .home-logo {
-  width: 56px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
 }
 
 .clip-route-brand-center span {
@@ -1935,7 +1945,8 @@ a {
   }
 
   .clip-route-brand-center .home-logo {
-    width: 48px;
+    width: 44px;
+    height: 44px;
   }
 
   .clip-route-brand-center span {
@@ -2278,11 +2289,13 @@ a {
   }
 
   .clip-route-brand-center {
-    gap: 8px;
+    gap: 10px;
   }
 
   .clip-route-brand-center .home-logo {
     width: 40px;
+    height: 40px;
+    border-radius: 10px;
   }
 
   .clip-route-brand-center span {
@@ -2342,11 +2355,12 @@ a {
   }
 
   .brand-mark {
-    gap: 8px;
+    gap: 10px;
   }
 
   .home-logo {
-    width: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-mark span {
@@ -2498,11 +2512,12 @@ a {
 
 @media (max-width: 420px) {
   .brand-mark {
-    gap: 7px;
+    gap: 9px;
   }
 
   .home-logo {
-    width: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .brand-mark span {
