@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteName}`
   },
   icons: {
-    icon: [{ url: "/favicon.ico?v=2", type: "image/x-icon" }],
-    shortcut: [{ url: "/favicon.ico?v=2", type: "image/x-icon" }],
-    apple: [{ url: "/favicon.ico?v=2" }]
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "1024x1024" }],
+    shortcut: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "1024x1024" }]
   },
   description: siteDescription,
   applicationName: siteName,

@@ -41,7 +41,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json(first, { status: 200 });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unexpected error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Clip resolver failed", error);
+    return NextResponse.json(
+      { error: "Clipbin is temporarily unavailable. Please try again shortly." },
+      { status: 503 }
+    );
   }
 }

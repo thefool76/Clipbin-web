@@ -11,6 +11,10 @@ create unique index if not exists testing_emails_email_lower_unique
 
 alter table public.testing_emails enable row level security;
 
+revoke select, update, delete, truncate, references, trigger
+  on table public.testing_emails
+  from anon, authenticated;
+
 grant insert on table public.testing_emails to anon, authenticated;
 
 drop policy if exists "allow_public_testing_email_insert" on public.testing_emails;
